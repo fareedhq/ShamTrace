@@ -1,0 +1,818 @@
+{
+  "schema_version": "1.7",
+  "partial": false,
+  "network": {
+    "route": "direct",
+    "target_type": "web",
+    "local_target_dns": true,
+    "tor_verified": false
+  },
+  "edge": {
+    "cloudflare": {
+      "state": "not_observed",
+      "evidence": [],
+      "challenge": false
+    },
+    "response_scope": "application_response_unverified",
+    "skip_followup": false,
+    "reason": null,
+    "limitations": "Headers may be spoofed; absent indicators do not exclude a CDN/WAF. Third-party CDN resource URLs are not evidence about target hosting."
+  },
+  "profile": "extended",
+  "dns": {
+    "status": "complete",
+    "queries": [
+      {
+        "name": "demo-fixture.local.test",
+        "type": "A",
+        "status": "ok",
+        "records": [
+          "192.0.2.10"
+        ],
+        "ttl": 300,
+        "interpretation": "Resolved 1 IPv4 address(es)."
+      },
+      {
+        "name": "demo-fixture.local.test",
+        "type": "AAAA",
+        "status": "no_answer",
+        "records": [],
+        "ttl": null,
+        "interpretation": "Hostname exists (NODATA), but no IPv6 (AAAA) record is configured."
+      },
+      {
+        "name": "demo-fixture.local.test",
+        "type": "CNAME",
+        "status": "no_answer",
+        "records": [],
+        "ttl": null,
+        "interpretation": "No CNAME record (expected at zone apex; RFC 1034/2181 prohibits CNAME alongside NS/SOA)."
+      },
+      {
+        "name": "demo-fixture.local.test",
+        "type": "TXT",
+        "status": "ok",
+        "records": [
+          "\"v=spf1 -all\""
+        ],
+        "ttl": 3600,
+        "interpretation": "TXT records present (includes SPF policy)."
+      },
+      {
+        "name": "_dmarc.demo-fixture.local.test",
+        "type": "TXT",
+        "status": "ok",
+        "records": [
+          "\"v=DMARC1; p=reject\""
+        ],
+        "ttl": 3600,
+        "interpretation": "DMARC policy record published."
+      }
+    ],
+    "limitations": "Demo fixture records (RFC 5737 TEST-NET-1)."
+  },
+  "certificate": null,
+  "tls_connection": {
+    "applicable": true,
+    "protocol": null,
+    "cipher_suite": null,
+    "cipher_bits": null,
+    "certificate_verified": true,
+    "audit_scope": "single_connection_only",
+    "limitations": "Socket stream did not expose ssl_object metadata; full cipher/protocol enumeration was not performed."
+  },
+  "cors": {
+    "state": "not_advertised",
+    "risk": "none",
+    "allow_origin": null,
+    "allow_credentials": null,
+    "allow_methods": null,
+    "allow_headers": null,
+    "expose_headers": null,
+    "vary_origin": false,
+    "notes": [],
+    "limitations": "Passive inspection of a standard response; dynamic Origin reflection requires active cross-origin preflight testing."
+  },
+  "redirect_info": {
+    "followed": false,
+    "hops": 0,
+    "chain": [],
+    "blocked_location": null,
+    "stop_reason": null
+  },
+  "final_url": "https://demo-fixture.local.test",
+  "content": {
+    "bytes_inspected": 461,
+    "truncated": false,
+    "sha256_inspected_bytes": "5e4321350ded8da5270c5e119fee1954c15b098d2c7bef1dc9a8549e863b223f",
+    "content_type": "text/html; charset=utf-8",
+    "html": {
+      "title": "Demo Portal [LOCAL FIXTURE]",
+      "generator_claim": "DemoCMS 2.1.0",
+      "link_count": 1,
+      "links": [
+        "https://demo-fixture.local.test/docs?page=1"
+      ],
+      "same_origin_links": [
+        "https://demo-fixture.local.test/docs?page=1"
+      ],
+      "external_links": [],
+      "forms": [
+        {
+          "method": "POST",
+          "action": "https://demo-fixture.local.test/auth/login"
+        }
+      ],
+      "form_details": [
+        {
+          "method": "POST",
+          "action": "https://demo-fixture.local.test/auth/login",
+          "inputs": [
+            {
+              "name": "csrf_token",
+              "type": "hidden"
+            }
+          ],
+          "has_csrf_field": true
+        }
+      ],
+      "scripts": [
+        "https://demo-fixture.local.test/static/app.js",
+        "https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"
+      ],
+      "resource_count": 2,
+      "resource_origins": [
+        "https://cdn.jsdelivr.net",
+        "https://demo-fixture.local.test"
+      ],
+      "http_resources_on_https": []
+    }
+  },
+  "tool": "ShamTrace",
+  "version": "0.2.0",
+  "timestamp": "2026-10-18T15:14:56.543222+00:00",
+  "target": "https://demo-fixture.local.test",
+  "resolved_ips": [
+    "192.0.2.10"
+  ],
+  "http_status": 200,
+  "http_version": "HTTP/1.1",
+  "tls": "Certificate verified; TLS details unavailable",
+  "server": "nginx/1.24.0",
+  "powered_by": null,
+  "redirect_location": null,
+  "headers": [
+    {
+      "header": "content-security-policy",
+      "state": "missing",
+      "value": null,
+      "quality": "missing",
+      "evaluation": "Header not present in response.",
+      "purpose": "Controls permitted content sources."
+    },
+    {
+      "header": "x-content-type-options",
+      "state": "present",
+      "value": "nosniff",
+      "quality": "strong",
+      "evaluation": "Strict MIME-sniffing protection enabled.",
+      "purpose": "Controls MIME sniffing."
+    },
+    {
+      "header": "referrer-policy",
+      "state": "missing",
+      "value": null,
+      "quality": "missing",
+      "evaluation": "Header not present in response.",
+      "purpose": "Controls referrer disclosure."
+    },
+    {
+      "header": "permissions-policy",
+      "state": "missing",
+      "value": null,
+      "quality": "missing",
+      "evaluation": "Header not present in response.",
+      "purpose": "Controls browser feature access."
+    },
+    {
+      "header": "strict-transport-security",
+      "state": "present",
+      "value": "max-age=63072000; includeSubDomains",
+      "quality": "strong",
+      "evaluation": "max-age=63072000 (>= 1 year).",
+      "purpose": "Advertises an HTTPS-only policy."
+    }
+  ],
+  "cookies": [
+    {
+      "name": "__Host-session",
+      "secure": true,
+      "httponly": true,
+      "samesite": "not specified",
+      "path": "/",
+      "domain": null,
+      "persistent": false,
+      "prefix": "__Host-",
+      "prefix_valid": true,
+      "likely_sensitive": true
+    }
+  ],
+  "metadata_endpoints": [
+    {
+      "url": "https://demo-fixture.local.test/robots.txt",
+      "status": "ok",
+      "http_status": 200,
+      "redirect_location": null,
+      "content": {
+        "bytes_inspected": 34,
+        "truncated": false,
+        "sha256_inspected_bytes": "fcee663beeaa804bcbed6a80e27df2e888a47629b93a5695253f24942c1c18b9",
+        "content_type": "text/plain",
+        "html": null
+      },
+      "validation": {
+        "state": "recognized",
+        "reason": "Recognized robots directives; rule semantics not evaluated.",
+        "directives": {
+          "user-agent": [
+            "*"
+          ],
+          "disallow": [
+            "/internal"
+          ]
+        }
+      }
+    },
+    {
+      "url": "https://demo-fixture.local.test/sitemap.xml",
+      "status": "ok",
+      "http_status": 404,
+      "redirect_location": null,
+      "content": {
+        "bytes_inspected": 9,
+        "truncated": false,
+        "sha256_inspected_bytes": "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5",
+        "content_type": "text/plain; charset=utf-8",
+        "html": null
+      },
+      "validation": {
+        "state": "not_found",
+        "reason": "HTTP 404; metadata document was checked and is not present."
+      }
+    },
+    {
+      "url": "https://demo-fixture.local.test/.well-known/security.txt",
+      "status": "ok",
+      "http_status": 404,
+      "redirect_location": null,
+      "content": {
+        "bytes_inspected": 9,
+        "truncated": false,
+        "sha256_inspected_bytes": "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5",
+        "content_type": "text/plain; charset=utf-8",
+        "html": null
+      },
+      "validation": {
+        "state": "not_found",
+        "reason": "HTTP 404; metadata document was checked and is not present."
+      }
+    }
+  ],
+  "scripts": {
+    "scripts_discovered": 2,
+    "same_origin_eligible": 1,
+    "request_limit": 3,
+    "results": [
+      {
+        "url": "https://demo-fixture.local.test/static/app.js",
+        "http_status": 200,
+        "content": {
+          "bytes_inspected": 24,
+          "truncated": false,
+          "sha256_inspected_bytes": "1a9644327e33cc815975b32e31c41b1a47a6a6aa9d326501ceda8d468e837ac9",
+          "content_type": "application/javascript",
+          "html": null
+        },
+        "state": "analyzed",
+        "api_path_hints": [
+          "/api/v1/health"
+        ],
+        "interpretation": "Static string hints only; paths are not verified endpoints. JavaScript is not executed."
+      }
+    ]
+  },
+  "pages": {
+    "budget": 2,
+    "results": [
+      {
+        "url": "https://demo-fixture.local.test/docs?page=1",
+        "discovered_from": "https://demo-fixture.local.test",
+        "http_status": 200,
+        "state": "observed",
+        "content": {
+          "bytes_inspected": 39,
+          "truncated": false,
+          "sha256_inspected_bytes": "32ae65c49c93735895b27e3d619d293f278a160f58ccf3e54b2133375d55ee75",
+          "content_type": "text/html",
+          "html": {
+            "title": "Docs Page 1",
+            "generator_claim": null,
+            "link_count": 0,
+            "links": [],
+            "same_origin_links": [],
+            "external_links": [],
+            "forms": [],
+            "form_details": [],
+            "scripts": [],
+            "resource_count": 0,
+            "resource_origins": [],
+            "http_resources_on_https": []
+          }
+        },
+        "findings": [
+          {
+            "id": "header-content-security-policy",
+            "priority": "review",
+            "confidence": "high",
+            "classification": "configuration_observation",
+            "evidence": "content-security-policy: missing on this response.",
+            "recommendation": "Inventory required script/style origins, trial Content-Security-Policy-Report-Only, then enforce a policy with nonces or hashes where appropriate.",
+            "remediation": "Inventory required script/style origins, trial Content-Security-Policy-Report-Only, then enforce a policy with nonces or hashes where appropriate.",
+            "severity": "info",
+            "title": "Header content security policy",
+            "severity_rationale": "Informational hardening gap; CSP mitigates XSS impact but requires application-specific tuning.",
+            "category": "hardening",
+            "status": "observed",
+            "affected_url": "https://demo-fixture.local.test/docs?page=1",
+            "affected_urls": [
+              "https://demo-fixture.local.test/docs?page=1"
+            ],
+            "limitations": "Absence of CSP is a defense-in-depth hardening observation, not proof of an XSS vulnerability."
+          },
+          {
+            "id": "header-x-content-type-options",
+            "priority": "review",
+            "confidence": "high",
+            "classification": "configuration_observation",
+            "evidence": "x-content-type-options: missing on this response.",
+            "recommendation": "Serve correct Content-Type values and configure X-Content-Type-Options: nosniff.",
+            "remediation": "Serve correct Content-Type values and configure X-Content-Type-Options: nosniff.",
+            "severity": "info",
+            "title": "Header x content type options",
+            "severity_rationale": "Informational hardening gap; nosniff prevents browsers from MIME-sniffing non-executable responses.",
+            "category": "hardening",
+            "status": "observed",
+            "affected_url": "https://demo-fixture.local.test/docs?page=1",
+            "affected_urls": [
+              "https://demo-fixture.local.test/docs?page=1"
+            ],
+            "limitations": "Exploitability depends on whether user-controlled content can be uploaded or reflected with ambiguous MIME types."
+          },
+          {
+            "id": "header-referrer-policy",
+            "priority": "review",
+            "confidence": "high",
+            "classification": "configuration_observation",
+            "evidence": "referrer-policy: missing on this response.",
+            "recommendation": "Review whether Referrer-Policy: strict-origin-when-cross-origin meets application privacy requirements.",
+            "remediation": "Review whether Referrer-Policy: strict-origin-when-cross-origin meets application privacy requirements.",
+            "severity": "info",
+            "title": "Header referrer policy",
+            "severity_rationale": "Informational hardening gap; explicit Referrer-Policy prevents unintended cross-origin URL disclosure.",
+            "category": "hardening",
+            "status": "observed",
+            "affected_url": "https://demo-fixture.local.test/docs?page=1",
+            "affected_urls": [
+              "https://demo-fixture.local.test/docs?page=1"
+            ],
+            "limitations": "Impact depends on whether sensitive tokens or identifiers appear in application URLs."
+          },
+          {
+            "id": "header-permissions-policy",
+            "priority": "review",
+            "confidence": "high",
+            "classification": "configuration_observation",
+            "evidence": "permissions-policy: missing on this response.",
+            "recommendation": "Disable unused browser features through an application-specific Permissions-Policy.",
+            "remediation": "Disable unused browser features through an application-specific Permissions-Policy.",
+            "severity": "info",
+            "title": "Header permissions policy",
+            "severity_rationale": "Informational hardening gap; restricts access to powerful browser APIs.",
+            "category": "hardening",
+            "status": "observed",
+            "affected_url": "https://demo-fixture.local.test/docs?page=1",
+            "affected_urls": [
+              "https://demo-fixture.local.test/docs?page=1"
+            ],
+            "limitations": "Browser feature restriction is hardening; absence alone is not an exploitable flaw."
+          },
+          {
+            "id": "header-strict-transport-security",
+            "priority": "review",
+            "confidence": "high",
+            "classification": "configuration_observation",
+            "evidence": "strict-transport-security: missing on this response.",
+            "recommendation": "After verifying HTTPS coverage, configure Strict-Transport-Security; evaluate subdomains before includeSubDomains.",
+            "remediation": "After verifying HTTPS coverage, configure Strict-Transport-Security; evaluate subdomains before includeSubDomains.",
+            "severity": "info",
+            "title": "Header strict transport security",
+            "severity_rationale": "Informational hardening gap; HSTS instructs browsers to enforce HTTPS on future connections.",
+            "category": "hardening",
+            "status": "observed",
+            "affected_url": "https://demo-fixture.local.test/docs?page=1",
+            "affected_urls": [
+              "https://demo-fixture.local.test/docs?page=1"
+            ],
+            "limitations": "HSTS applies only after a browser has completed an initial trusted HTTPS connection."
+          },
+          {
+            "id": "framing-policy-not-observed",
+            "title": "No recognized response-header framing restriction",
+            "priority": "review",
+            "severity": "low",
+            "severity_rationale": "Without frame-ancestors or X-Frame-Options, HTML pages can be framed by external origins.",
+            "confidence": "high",
+            "classification": "configuration_observation",
+            "category": "configuration",
+            "evidence": {
+              "x-frame-options": null,
+              "csp-frame-ancestors": null
+            },
+            "limitations": "Clickjacking risk applies only if the page contains state-changing interactive UI elements.",
+            "recommendation": "Decide whether embedding is needed; configure CSP frame-ancestors accordingly. Clickjacking impact requires UI validation.",
+            "remediation": "Decide whether embedding is needed; configure CSP frame-ancestors accordingly. Clickjacking impact requires UI validation.",
+            "status": "observed",
+            "affected_url": "https://demo-fixture.local.test/docs?page=1",
+            "affected_urls": [
+              "https://demo-fixture.local.test/docs?page=1"
+            ]
+          }
+        ]
+      }
+    ],
+    "skipped": 0,
+    "discovered_links": [
+      "https://demo-fixture.local.test/docs?page=1"
+    ],
+    "discovered_forms": [
+      {
+        "method": "POST",
+        "action": "https://demo-fixture.local.test/auth/login"
+      }
+    ],
+    "discovered_scripts": [
+      "https://demo-fixture.local.test/static/app.js",
+      "https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"
+    ],
+    "link_sources": [
+      {
+        "url": "https://demo-fixture.local.test/docs?page=1",
+        "source": "https://demo-fixture.local.test"
+      }
+    ],
+    "form_sources": [
+      {
+        "method": "POST",
+        "action": "https://demo-fixture.local.test/auth/login",
+        "source": "https://demo-fixture.local.test"
+      }
+    ],
+    "script_sources": [
+      {
+        "url": "https://demo-fixture.local.test/static/app.js",
+        "source": "https://demo-fixture.local.test"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js",
+        "source": "https://demo-fixture.local.test"
+      }
+    ],
+    "limitations": "Same-origin HTML links are normalized (retaining meaningful query parameters while skipping state-changing actions); JavaScript routes and forms are not executed.",
+    "pending_links": 0
+  },
+  "fingerprints": [
+    {
+      "name": "nginx",
+      "category": "web_server",
+      "categories": [
+        "web_server"
+      ],
+      "version": "1.24.0",
+      "confidence": "medium",
+      "evidence_items": [
+        "Server header: nginx/1.24.0"
+      ],
+      "evidence": "Server header: nginx/1.24.0",
+      "verified": false,
+      "note": "Passive fingerprint/banner claim; version strings alone are not proof of a vulnerability."
+    },
+    {
+      "name": "DemoCMS",
+      "category": "cms_generator",
+      "categories": [
+        "cms_generator"
+      ],
+      "version": "2.1.0",
+      "confidence": "medium",
+      "evidence_items": [
+        "Meta generator: DemoCMS 2.1.0"
+      ],
+      "evidence": "Meta generator: DemoCMS 2.1.0",
+      "verified": false,
+      "note": "Passive fingerprint/banner claim; version strings alone are not proof of a vulnerability."
+    }
+  ],
+  "components": [
+    {
+      "ecosystem": "npm",
+      "name": "jquery",
+      "version": "3.7.1",
+      "confidence": "medium",
+      "evidence": "https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js",
+      "basis": "Explicit version in CDN reference; served package contents not independently verified."
+    }
+  ],
+  "advisories": {
+    "provider": "OSV",
+    "status": "disabled",
+    "requests": 0,
+    "results": [],
+    "queried_at": null,
+    "limitations": "Package-version advisory matches are candidates, not confirmed exploitable website vulnerabilities.",
+    "reason": "Use --cve to query OSV with detected package names and versions."
+  },
+  "external_tools": {
+    "whatweb": {
+      "tool": "whatweb",
+      "status": "skipped",
+      "reason": "Not requested (use --whatweb to enable).",
+      "plugins": []
+    },
+    "nmap": {
+      "tool": "nmap",
+      "status": "skipped",
+      "reason": "Not requested (use --nmap-ports PORTS to scan specific in-scope ports).",
+      "ports": []
+    }
+  },
+  "elapsed_seconds": 0.01,
+  "limitations": [
+    "In-scope redirects are followed up to 5 hops; out-of-scope redirects are blocked. HTML traversal follows the --pages budget; extended adds three metadata requests and up to three scripts.",
+    "Document inspection is capped at 512 KiB of decoded content; no JavaScript execution.",
+    "HTML observations describe source markup, not browser runtime behavior.",
+    "Header values and policies are passively evaluated; application context is required.",
+    "Missing headers are hardening observations, not proof of an exploitable vulnerability.",
+    "Server, framework, and generator banners are unverified claims and never proof of CVEs.",
+    "TLS reports the single negotiated connection and certificate, not all server-supported protocols or ciphers.",
+    "Cookie flags require context; non-sensitive preference cookies may intentionally omit HttpOnly.",
+    "DNS lists resolution results, not a verified connected peer.",
+    "The timeout applies to network operations, not a hard whole-scan deadline.",
+    "Sensitive tokens, authentication headers, and cookie values are redacted."
+  ],
+  "shared_edge": {
+    "is_shared_edge": false,
+    "providers": []
+  },
+  "modules": {
+    "dns": {
+      "status": "completed",
+      "detail": "Queried 5 DNS record types."
+    },
+    "http": {
+      "status": "completed",
+      "detail": "HTTP 200 from https://demo-fixture.local.test"
+    },
+    "tls": {
+      "status": "completed",
+      "detail": "Certificate verified; TLS details unavailable (single connection; not a full cipher/protocol audit)"
+    },
+    "headers_cookies_cors": {
+      "status": "completed",
+      "detail": "Evaluated 5 security headers, 1 cookie(s), and CORS (not_advertised)."
+    },
+    "metadata": {
+      "status": "completed",
+      "detail": "Checked 3 metadata paths (0 error(s))."
+    },
+    "scripts": {
+      "status": "completed",
+      "detail": "Inspected 1 same-origin script(s) (2 discovered)."
+    },
+    "crawl": {
+      "status": "completed",
+      "detail": "Visited 1 additional in-scope page(s) (budget: 2)."
+    },
+    "advisories": {
+      "status": "skipped",
+      "detail": "Use --cve to query OSV with detected package names and versions."
+    },
+    "whatweb": {
+      "status": "skipped",
+      "detail": "Not requested (use --whatweb to enable)."
+    },
+    "fingerprinting": {
+      "status": "completed",
+      "detail": "Consolidated 2 unique technology fingerprint(s)."
+    },
+    "nmap": {
+      "status": "skipped",
+      "detail": "Not requested (use --nmap-ports PORTS to scan specific in-scope ports)."
+    }
+  },
+  "inventory": {
+    "links": [
+      {
+        "url": "https://demo-fixture.local.test/docs?page=1",
+        "source": "https://demo-fixture.local.test"
+      }
+    ],
+    "forms": [
+      {
+        "method": "POST",
+        "action": "https://demo-fixture.local.test/auth/login",
+        "source": "https://demo-fixture.local.test"
+      }
+    ],
+    "scripts": [
+      {
+        "url": "https://demo-fixture.local.test/static/app.js",
+        "source": "https://demo-fixture.local.test"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js",
+        "source": "https://demo-fixture.local.test"
+      }
+    ],
+    "endpoint_candidates": [
+      {
+        "path": "/api/v1/health",
+        "source": "script:https://demo-fixture.local.test/static/app.js"
+      },
+      {
+        "path": "/internal",
+        "source": "robots:https://demo-fixture.local.test/robots.txt"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "id": "header-content-security-policy",
+      "priority": "review",
+      "confidence": "high",
+      "classification": "configuration_observation",
+      "evidence": "content-security-policy: missing on this response.",
+      "recommendation": "Inventory required script/style origins, trial Content-Security-Policy-Report-Only, then enforce a policy with nonces or hashes where appropriate.",
+      "remediation": "Inventory required script/style origins, trial Content-Security-Policy-Report-Only, then enforce a policy with nonces or hashes where appropriate.",
+      "severity": "info",
+      "title": "Header content security policy",
+      "severity_rationale": "Informational hardening gap; CSP mitigates XSS impact but requires application-specific tuning.",
+      "category": "hardening",
+      "status": "observed",
+      "affected_url": "https://demo-fixture.local.test",
+      "affected_urls": [
+        "https://demo-fixture.local.test",
+        "https://demo-fixture.local.test/docs?page=1"
+      ],
+      "limitations": "Absence of CSP is a defense-in-depth hardening observation, not proof of an XSS vulnerability.",
+      "occurrence_count": 2
+    },
+    {
+      "id": "header-referrer-policy",
+      "priority": "review",
+      "confidence": "high",
+      "classification": "configuration_observation",
+      "evidence": "referrer-policy: missing on this response.",
+      "recommendation": "Review whether Referrer-Policy: strict-origin-when-cross-origin meets application privacy requirements.",
+      "remediation": "Review whether Referrer-Policy: strict-origin-when-cross-origin meets application privacy requirements.",
+      "severity": "info",
+      "title": "Header referrer policy",
+      "severity_rationale": "Informational hardening gap; explicit Referrer-Policy prevents unintended cross-origin URL disclosure.",
+      "category": "hardening",
+      "status": "observed",
+      "affected_url": "https://demo-fixture.local.test",
+      "affected_urls": [
+        "https://demo-fixture.local.test",
+        "https://demo-fixture.local.test/docs?page=1"
+      ],
+      "limitations": "Impact depends on whether sensitive tokens or identifiers appear in application URLs.",
+      "occurrence_count": 2
+    },
+    {
+      "id": "header-permissions-policy",
+      "priority": "review",
+      "confidence": "high",
+      "classification": "configuration_observation",
+      "evidence": "permissions-policy: missing on this response.",
+      "recommendation": "Disable unused browser features through an application-specific Permissions-Policy.",
+      "remediation": "Disable unused browser features through an application-specific Permissions-Policy.",
+      "severity": "info",
+      "title": "Header permissions policy",
+      "severity_rationale": "Informational hardening gap; restricts access to powerful browser APIs.",
+      "category": "hardening",
+      "status": "observed",
+      "affected_url": "https://demo-fixture.local.test",
+      "affected_urls": [
+        "https://demo-fixture.local.test",
+        "https://demo-fixture.local.test/docs?page=1"
+      ],
+      "limitations": "Browser feature restriction is hardening; absence alone is not an exploitable flaw.",
+      "occurrence_count": 2
+    },
+    {
+      "id": "framing-policy-not-observed",
+      "title": "No recognized response-header framing restriction",
+      "priority": "review",
+      "severity": "low",
+      "severity_rationale": "Without frame-ancestors or X-Frame-Options, HTML pages can be framed by external origins.",
+      "confidence": "high",
+      "classification": "configuration_observation",
+      "category": "configuration",
+      "evidence": {
+        "x-frame-options": null,
+        "csp-frame-ancestors": null
+      },
+      "limitations": "Clickjacking risk applies only if the page contains state-changing interactive UI elements.",
+      "recommendation": "Decide whether embedding is needed; configure CSP frame-ancestors accordingly. Clickjacking impact requires UI validation.",
+      "remediation": "Decide whether embedding is needed; configure CSP frame-ancestors accordingly. Clickjacking impact requires UI validation.",
+      "status": "observed",
+      "affected_url": "https://demo-fixture.local.test",
+      "affected_urls": [
+        "https://demo-fixture.local.test",
+        "https://demo-fixture.local.test/docs?page=1"
+      ],
+      "occurrence_count": 2
+    },
+    {
+      "id": "header-x-content-type-options",
+      "priority": "review",
+      "confidence": "high",
+      "classification": "configuration_observation",
+      "evidence": "x-content-type-options: missing on this response.",
+      "recommendation": "Serve correct Content-Type values and configure X-Content-Type-Options: nosniff.",
+      "remediation": "Serve correct Content-Type values and configure X-Content-Type-Options: nosniff.",
+      "severity": "info",
+      "title": "Header x content type options",
+      "severity_rationale": "Informational hardening gap; nosniff prevents browsers from MIME-sniffing non-executable responses.",
+      "category": "hardening",
+      "status": "observed",
+      "affected_url": "https://demo-fixture.local.test/docs?page=1",
+      "affected_urls": [
+        "https://demo-fixture.local.test/docs?page=1"
+      ],
+      "limitations": "Exploitability depends on whether user-controlled content can be uploaded or reflected with ambiguous MIME types.",
+      "occurrence_count": 1
+    },
+    {
+      "id": "header-strict-transport-security",
+      "priority": "review",
+      "confidence": "high",
+      "classification": "configuration_observation",
+      "evidence": "strict-transport-security: missing on this response.",
+      "recommendation": "After verifying HTTPS coverage, configure Strict-Transport-Security; evaluate subdomains before includeSubDomains.",
+      "remediation": "After verifying HTTPS coverage, configure Strict-Transport-Security; evaluate subdomains before includeSubDomains.",
+      "severity": "info",
+      "title": "Header strict transport security",
+      "severity_rationale": "Informational hardening gap; HSTS instructs browsers to enforce HTTPS on future connections.",
+      "category": "hardening",
+      "status": "observed",
+      "affected_url": "https://demo-fixture.local.test/docs?page=1",
+      "affected_urls": [
+        "https://demo-fixture.local.test/docs?page=1"
+      ],
+      "limitations": "HSTS applies only after a browser has completed an initial trusted HTTPS connection.",
+      "occurrence_count": 1
+    }
+  ],
+  "summary": {
+    "review_items": 6,
+    "requests": 6,
+    "assessment": "Observations requiring contextual review; no exploit validation."
+  },
+  "assessment": {
+    "conclusions": [
+      "Target returned HTTP 200; Certificate verified; TLS details unavailable.",
+      "Technology fingerprints observed: nginx 1.24.0 (medium), DemoCMS 2.1.0 (medium). Version banners alone are unverified claims and not proof of CVEs.",
+      "https://demo-fixture.local.test/robots.txt: recognized \u2014 Recognized robots directives; rule semantics not evaluated.",
+      "https://demo-fixture.local.test/sitemap.xml: not_found \u2014 HTTP 404; metadata document was checked and is not present.",
+      "https://demo-fixture.local.test/.well-known/security.txt: not_found \u2014 HTTP 404; metadata document was checked and is not present.",
+      "DNS AAAA: no answer for this hostname; this alone is not a vulnerability.",
+      "Advisory lookup: disabled; 0 candidate matches. Use --cve to query OSV with detected package names and versions.",
+      "Absence of findings or skipped/failed checks does not establish that the target is secure."
+    ],
+    "coverage_gaps": [
+      "No JavaScript execution, authenticated browsing, or interaction with forms.",
+      "Module 'advisories' was skipped: Use --cve to query OSV with detected package names and versions..",
+      "Module 'whatweb' was skipped: Not requested (use --whatweb to enable)..",
+      "Module 'nmap' was skipped: Not requested (use --nmap-ports PORTS to scan specific in-scope ports)..",
+      "No exploit validation, full port inventory, or full TLS protocol/cipher configuration audit. HTML traversal is limited by the page budget."
+    ],
+    "next_steps": [
+      "Inventory required script/style origins, trial Content-Security-Policy-Report-Only, then enforce a policy with nonces or hashes where appropriate.",
+      "Review whether Referrer-Policy: strict-origin-when-cross-origin meets application privacy requirements.",
+      "Disable unused browser features through an application-specific Permissions-Policy.",
+      "Decide whether embedding is needed; configure CSP frame-ancestors accordingly. Clickjacking impact requires UI validation.",
+      "Serve correct Content-Type values and configure X-Content-Type-Options: nosniff.",
+      "After verifying HTTPS coverage, configure Strict-Transport-Security; evaluate subdomains before includeSubDomains."
+    ]
+  }
+}

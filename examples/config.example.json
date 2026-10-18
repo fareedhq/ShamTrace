@@ -1,0 +1,16 @@
+{
+  "_comment": "Example ShamTrace invocation profile (CLI flags equivalent)",
+  "profile": "extended",
+  "timeout": 15,
+  "pages": 3,
+  "retries": 1,
+  "rate_limit": 2.0,
+  "concurrency": 4,
+  "max_requests": 25,
+  "max_duration": 180.0,
+  "follow_scoped_redirects": true,
+  "cve": false,
+  "whatweb": false,
+  "nmap_ports": null,
+  "allow_shared_ip": false
+}

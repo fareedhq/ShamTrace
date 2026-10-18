@@ -1,0 +1,6 @@
+#!/usr/bin/env python3
+"""Compatibility launcher; prefer the installed shamtrace command."""
+from shamtrace.cli import main
+
+if __name__ == "__main__":
+    main()

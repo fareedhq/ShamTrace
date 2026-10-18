@@ -1,7 +1,16 @@
 .venv/
+venv/
 __pycache__/
 *.py[cod]
+*$py.class
 .env
 .env.*
 !.env.example
 results/
+reports/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.coverage
+.DS_Store
