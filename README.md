@@ -118,30 +118,26 @@ Monitors `CNAME` records pointing to external cloud services (GitHub Pages, Hero
 
 Every assessment produces a self-contained HTML report designed for reviewing security findings, validating evidence, and sharing assessment results with technical teams.
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/fareedhq/ShamTrace/main/examples/demo-preview.png" alt="ShamTrace security assessment dashboard showing findings, telemetry, DNS, TLS, and exposure evidence" width="900" />
-</div>
-
 ### Dashboard Highlights
 
 - **Structured Assessment Navigation**  
-  Quickly navigate between the executive summary, module telemetry, security findings, DNS evidence, TLS certificates, and exposure probes.
+  Navigate between the executive summary, module telemetry, security findings, DNS evidence, TLS certificates, and exposure probes.
 
 - **Security Posture Overview**  
-  Review HTTP response status, latency, findings requiring attention, enabled assessment modules, and the number of surface requests from a single dashboard.
+  Review HTTP response status, latency, findings requiring attention, enabled assessment modules, and surface requests from a single dashboard.
 
 - **Evidence and Coverage Visualization**
-  - **Telemetry & Surface Matrix:** Visualizes which security signals were discovered, tested, and supported by collected evidence.
+  - **Telemetry & Surface Matrix:** Shows which security signals were discovered, tested, and supported by collected evidence.
   - **Security Control Coverage:** Summarizes the observed implementation of HSTS, CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, TLS, and DNS controls.
 
 - **Finding Classification and Filtering**  
-  Filter findings by severity and classification to prioritize validation and remediation work.
+  Filter findings by severity and classification to prioritize validation and remediation.
 
 - **Reproducible Technical Evidence**  
-  Findings include supporting observations and assessment context to help analysts validate results and reduce false positives.
+  Each finding includes supporting observations and assessment context to simplify manual validation and reduce false positives.
 
 - **Portable and Privacy-Preserving**  
-  Reports work entirely offline with no external CDN, font, analytics, or JavaScript dependencies.
+  Reports work entirely offline without external CDNs, fonts, analytics, or JavaScript dependencies.
 
 - **Restrictive Content Security Policy**  
   Generated reports contain no `<script>` tags and enforce:
