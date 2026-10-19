@@ -114,23 +114,40 @@ Monitors `CNAME` records pointing to external cloud services (GitHub Pages, Hero
 
 ---
 
-## Enterprise SaaS Dashboard
+## Evidence-First Security Assessment Dashboard
 
-Every assessment generates a self-contained, offline HTML dashboard styled in a clean, modern Enterprise SaaS UI:
+Every assessment produces a self-contained HTML report designed for reviewing security findings, validating evidence, and sharing assessment results with technical teams.
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/fareedhq/ShamTrace/main/examples/demo-preview.png" alt="ShamTrace Dashboard" width="900" onerror="this.style.display='none'"/>
+  <img src="https://raw.githubusercontent.com/fareedhq/ShamTrace/main/examples/demo-preview.png" alt="ShamTrace security assessment dashboard showing findings, telemetry, DNS, TLS, and exposure evidence" width="900" />
 </div>
 
-- **Fixed Left Sidebar Navigation**: Quick jumps between *Dashboard*, *Module Telemetry*, *Security Findings*, *DNS Evidence*, *SSL / Certificate*, and *Exposure Probes*.
-- **Top KPI Stat Cards**: Mini sparklines displaying HTTP status & latency, review items, active modules, and surface requests.
-- **Side-by-Side Analytics**:
-  - *Telemetry & Surface Matrix*: 12-column waffle block chart visualizing discovered vs active evidence.
-  - *Security Posture Breakdown*: 8-pillar vertical chart showing implementation rate for `HSTS`, `CSP`, `XFO`, `XCTO`, `REF`, `PERM`, `TLS`, and `DNS`.
-- **Pure-CSS Filtering**: Interactive filtering by Severity (`High`, `Medium`, `Low`, `Info`) and Classification without running any client-side JavaScript.
-- **100% Offline & Private**: Zero CDN requests, zero font downloads, zero `<script>` tags, enforced by strict `Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'`.
+### Dashboard Highlights
 
----
+- **Structured Assessment Navigation**  
+  Quickly navigate between the executive summary, module telemetry, security findings, DNS evidence, TLS certificates, and exposure probes.
+
+- **Security Posture Overview**  
+  Review HTTP response status, latency, findings requiring attention, enabled assessment modules, and the number of surface requests from a single dashboard.
+
+- **Evidence and Coverage Visualization**
+  - **Telemetry & Surface Matrix:** Visualizes which security signals were discovered, tested, and supported by collected evidence.
+  - **Security Control Coverage:** Summarizes the observed implementation of HSTS, CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, TLS, and DNS controls.
+
+- **Finding Classification and Filtering**  
+  Filter findings by severity and classification to prioritize validation and remediation work.
+
+- **Reproducible Technical Evidence**  
+  Findings include supporting observations and assessment context to help analysts validate results and reduce false positives.
+
+- **Portable and Privacy-Preserving**  
+  Reports work entirely offline with no external CDN, font, analytics, or JavaScript dependencies.
+
+- **Restrictive Content Security Policy**  
+  Generated reports contain no `<script>` tags and enforce:
+
+  ```text
+  default-src 'none'; style-src 'unsafe-inline'; img-src 'self' data:;
 
 ## CLI Usage Reference
 
